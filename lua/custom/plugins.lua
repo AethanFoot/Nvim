@@ -90,6 +90,11 @@ local plugins = {
   },
 
   {
+    "nvim-telescope/telescope-fzf-native.nvim",
+    build = "make",
+  },
+
+  {
     "jiaoshijie/undotree",
     dependencies = "nvim-lua/plenary.nvim",
     cmd = "Undotree",
@@ -97,6 +102,11 @@ local plugins = {
       require("undotree").setup()
       usercmd("Undotree", require("undotree").toggle, {})
     end,
+  },
+
+  {
+    "github/copilot.vim",
+    event = "InsertEnter",
   },
   -- To make a plugin not be loaded
   -- {

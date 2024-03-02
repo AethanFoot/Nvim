@@ -5,13 +5,13 @@ M.general = {
   n = {
     ["<leader>y"] = { [["+y]], "yank to clipboard" },
     ["<leader>Y"] = { [["+Y]], "Yank to clipboard" },
-    ["<leader>p"] = { [["+p]], "put from clipboard" },
+    ["<leader>pp"] = { [["+p]], "put from clipboard" },
     ["<leader>P"] = { [["+P]], "Put from clipboard" },
     ["<leader>d"] = { [["_d]], "delete" },
 
     ["<CR>"] = { ":noh <CR> <CR>", "Clear search highlight" },
 
-    [";"] = { ":", "enter command mode", opts = { nowait = true } },
+    ["\\"] = { ":", "enter command mode", opts = { nowait = true } },
 
     --  format with conform
     ["<leader>fm"] = {
@@ -35,6 +35,7 @@ M.general = {
 -- more keybinds!
 M.telescope = {
   n = {
+    -- ["<leader>ff"] = { "<cmd> Telescope find_files hidden=true <CR>", "Find files" },
     ["<leader>fg"] = { "<cmd> Telescope git_files <CR>", "Find git files" },
     ["<leader>cd"] = { "<cmd> Telescope zoxide list <CR>", "List zoxide cache" },
   },
