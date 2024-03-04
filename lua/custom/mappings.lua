@@ -62,4 +62,23 @@ M.undotree = {
   },
 }
 
+M.harpoon = {
+  n = {
+    ["<leader>a"] = { "<cmd> Harpoon <CR>", "Add file to harpoon" },
+    ["<leader>e"] = { "<cmd> HarpoonUI <CR>", "Open harpoon list" },
+    ["<A-1>"] = { "<cmd> HarpoonSelect1 <CR>", "Select the first file" },
+    ["<A-2>"] = { "<cmd> HarpoonSelect2 <CR>", "Select the second file" },
+    ["<A-3>"] = { "<cmd> HarpoonSelect3 <CR>", "Select the third file" },
+    ["<A-4>"] = { "<cmd> HarpoonSelect4 <CR>", "Select the fourth file" },
+    ["<A-5>"] = { "<cmd> HarpoonSelect5 <CR>", "Select the fifth file" },
+  },
+  i = {
+    ["<A-1>"] = { "<cmd> HarpoonSelect1 <CR>", "Select the first file" },
+    ["<A-2>"] = { "<cmd> HarpoonSelect2 <CR>", "Select the second file" },
+    ["<A-3>"] = { "<cmd> HarpoonSelect3 <CR>", "Select the third file" },
+    ["<A-4>"] = { "<cmd> HarpoonSelect4 <CR>", "Select the fourth file" },
+    ["<A-5>"] = { "<cmd> HarpoonSelect5 <CR>", "Select the fifth file" },
+  },
+}
+
 return M

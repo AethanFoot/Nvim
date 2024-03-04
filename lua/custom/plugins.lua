@@ -105,8 +105,63 @@ local plugins = {
   },
 
   {
-    "github/copilot.vim",
+    "zbirenbaum/copilot-cmp",
+    dependencies = "zbirenbaum/copilot.lua",
+    cmd = "Copilot",
     event = "InsertEnter",
+    config = function()
+      require("copilot").setup {
+        suggestion = { enabled = false },
+        panel = { enabled = false },
+        server_opts_overrides = {
+          settings = {
+            advanced = {
+              listCount = 10, -- #completions for panel
+              inlineSuggestCount = 3, -- #completions for getCompletions
+            },
+          },
+        },
+      }
+      require("copilot_cmp").setup {}
+    end,
+  },
+
+  {
+    "ThePrimeagen/harpoon",
+    branch = "harpoon2",
+    dependencies = { "nvim-lua/plenary.nvim" },
+    cmd = {
+      "Harpoon",
+      "HarpoonUI",
+      "HarpoonNext",
+      "HarpoonPrev",
+      "HarpoonSelect1",
+      "HarpoonSelect2",
+      "HarpoonSelect3",
+      "HarpoonSelect4",
+      "HarpoonSelect5",
+    },
+    config = function()
+      local harpoon = require "harpoon"
+      harpoon:setup()
+      usercmd("Harpoon", function()
+        harpoon:list():append()
+      end, {})
+      usercmd("HarpoonUI", function()
+        harpoon.ui:toggle_quick_menu(harpoon:list())
+      end, {})
+      usercmd("HarpoonNext", function()
+        harpoon:list():next()
+      end, {})
+      usercmd("HarpoonPrev", function()
+        harpoon:list():prev()
+      end, {})
+      for i = 1, 5, 1 do
+        usercmd("HarpoonSelect" .. i, function()
+          harpoon:list():select(i)
+        end, {})
+      end
+    end,
   },
   -- To make a plugin not be loaded
   -- {
