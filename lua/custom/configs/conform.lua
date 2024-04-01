@@ -12,6 +12,7 @@ local options = {
     sh = { "shfmt" },
 
     rust = { "rustfmt" },
+    typst = { "typstfmt" },
 
     ["*"] = { "trim_whitespace" },
   },

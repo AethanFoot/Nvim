@@ -6,6 +6,6 @@ opt.listchars:append "space:⋅"
 opt.listchars:append "eol:↴"
 opt.wrap = false
 opt.clipboard = ""
-opt.signcolumn = "number"
+-- opt.signcolumn = "number"
 opt.undodir = os.getenv "HOME" .. "/.cache/.vimdid"
 -- local autocmd = vim.api.nvim_create_autocmd

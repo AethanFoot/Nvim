@@ -15,3 +15,11 @@ end
 
 --
 -- lspconfig.pyright.setup { blabla}
+lspconfig.typst_lsp.setup {
+  on_attach = on_attach,
+  capabilities = capabilities,
+  filetypes = { "typst", "typ" },
+  settings = {
+    exportPdf = "onSave", -- Choose onType, onSave or never.
+  },
+}

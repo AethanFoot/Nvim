@@ -163,6 +163,14 @@ local plugins = {
       end
     end,
   },
+
+  {
+    "kaarmu/typst.vim",
+    ft = "typst",
+    config = function()
+      vim.g.typst_pdf_viewer = "mupdf"
+    end,
+  },
   -- To make a plugin not be loaded
   -- {
   --   "NvChad/nvim-colorizer.lua",
